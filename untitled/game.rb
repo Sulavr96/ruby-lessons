@@ -5,24 +5,25 @@ class Game
     player=Players.new
     player.setName("Hari","Ram","shyam")
 
-    puts player.getName.to_s
-    card=Card.new
-     puts card.setCard(3)
+    playerArray=(player.getName)
+     numOfPlayers=playerArray.count()
+     card=Card.new
+     cardArray=card.setCard(numOfPlayers)
 
-  end
-  def assignCard()
-    player=Players.new
-    card=Card.new
-
-
-    puts @ac=(player.getName)
-    @ac.each do |name|
-       name
+    playerArray.each do|player|
+      cardArray.each do|card|
+          a=player
+        b=card
+        puts "#{player} gets #{card}"
+      end
     end
-       @gc=card.setCard(3)
+    end
+
+
+
 
   end
-  end
+
 
 
   class Card
@@ -42,22 +43,18 @@ class Game
       #arr.collect do |array|
       #@cardarr= array
         #i=+1
-      p
 
-      for i in 0..n-1 do
+
+      distributionArray=Array.new
 
         firstcard= "#{@@ranks.sample} of #{@@shapes.sample}"
         secondcard="#{@@ranks.sample} of #{@@shapes.sample}"
         thirdcard="#{@@ranks.sample} of #{@@shapes.sample}"
-        f=[firstcard,secondcard,thirdcard]
-        @b=Array.new
-        @b=f.to_a
-      end
+        cardArray=[firstcard,secondcard,thirdcard]
 
+        distributionArray.push(cardArray)
 
-
-
-        return @b.to_s
+        return distributionArray
 
       end
 
@@ -73,8 +70,8 @@ class Game
     end
     def getName()
 
-      @a= @name.to_a
-      return @a
+      playerName= @name.to_a
+      return playerName
     end
 
 
