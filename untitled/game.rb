@@ -1,62 +1,87 @@
 class Game
 
 
-  def start()
+  def start
     player=Players.new
     player.setName("Hari","Ram","shyam")
 
-    playerArray=(player.getName)
-     numOfPlayers=playerArray.count()
+    @playerarray=(player.getName)
+     numOfPlayers=@playerarray.count()
      card=Card.new
-     cardArray=card.setCard(numOfPlayers)
+    @cardarray=card.setCard(numOfPlayers)
 
-    playerArray.each do|player|
-      cardArray.each do|card|
-          a=player
-        b=card
-        puts "#{player} gets #{card}"
-      end
+  end
+def distributeCards
+  @playerarray.each do|player|
+    @cardarray.each do|card|
+      @a=player
+      @b=card
+      if @playerarray.index(player)==@cardarray.index(card)
+      puts "#{@a} gets #{@b}"
     end
     end
-
-
+end
+end
+  def winner
+     @cardarray.each do|card|
+       puts card
+     end
 
 
   end
-
+  end
 
 
   class Card
-    @@ranks =["ace",2,3,4,5,6,7,8,9,10,"jack","queen","king"]
+    @@ranks =[2,3,4,5,6,7,8,9,10,"jack","queen","king","ace"]
     @@shapes = ["spade","heart","diamond","club"]
 
 
     def setCard(n)
 
 
-        #@arr1=[@@ranks.sample,@@shapes.sample]
 
+      player=Players.new
+      playerArray=(player.getName)
 
-      #arr=[@@ranks.sample,@@shapes.sample]
-
-      #while i<n
-      #arr.collect do |array|
-      #@cardarr= array
-        #i=+1
 
 
       distributionArray=Array.new
-
-        firstcard= "#{@@ranks.sample} of #{@@shapes.sample}"
-        secondcard="#{@@ranks.sample} of #{@@shapes.sample}"
-        thirdcard="#{@@ranks.sample} of #{@@shapes.sample}"
-        cardArray=[firstcard,secondcard,thirdcard]
-
+          for i in 1..n
+          @a=@@ranks.sample
+          @b=@@ranks.sample
+          @c=@@ranks.sample
+          @d=@@shapes.sample
+          @e=@@shapes.sample
+          @f=@@shapes.sample
+        firstcard= "#{@a} of #{@d}"
+        secondcard="#{@b} of #{@d}"
+        thirdcard="#{@c} of #{@e}"
+        if firstcard!=secondcard && secondcard!=thirdcard && thirdcard!=firstcard
+          cardArray=Array.new
+          cardArray.push(firstcard)
+          cardArray.push(secondcard)
+          cardArray.push(thirdcard)
+        end
+        if cardArray.values_at(0)!=cardArray.values_at(1) &&
+            cardArray.values_at(1)!=cardArray.values_at(2)&&
+            cardArray.values_at(2)!=cardArray.values_at(0)
         distributionArray.push(cardArray)
 
-        return distributionArray
 
-      end
+        end
+
+          end
+
+
+      return distributionArray
+
+    end
+
+    def returnRanks
+
+
+       end
 
 
         end
@@ -79,6 +104,8 @@ class Game
 
 game=Game.new
 game.start
+game.distributeCards
+game.winner
 
 
 
