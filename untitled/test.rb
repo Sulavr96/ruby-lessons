@@ -1,6 +1,6 @@
 class Test
 
-  diamondArray=[6,7,8,9,15]
+  diamondArray=[1,2,2,3,5,4,4]
   sorted_DiamondArray=diamondArray.sort
   sum=0
   person_Count=0
