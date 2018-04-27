@@ -1,4 +1,5 @@
-numbers=[1,2,3,4,5,6,7,8,9,10]
-numbers=numbers.select {|num|
-    num.even?}.reverse
-puts numbers
+afile = File.open("thor.srt", "r+")
+afile.each do |lines|
+    numeric_value = lines.match(/\d{2}:\d{2}:\d{2},\d{3}/)
+  puts numeric_value
+    end
