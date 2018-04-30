@@ -1,6 +1,7 @@
 time=[01,59,39]
-time_given=100
+time_given=10
 new_time=[]
+new_seconds=0
 if time_given/60!=0
   updated_minute=time[1]+time_given/60
   remaining_seconds=time_given-60
@@ -15,14 +16,15 @@ if updated_second >= 60
   new_seconds=new_seconds+updated_second-60
 else
   new_seconds=new_seconds.to_i+updated_second
+
 end
-if updated_minute >=60
+if updated_minute.to_i >=60
   new_minutes=00
   additional_minutes=updated_minute/60
   new_hours=time[0]+additional_minutes
   new_minutes=new_minutes+updated_minute-60
 else
-  new_minutes=new_minutes.to_i+updated_minute
+  new_minutes=time[1]
   new_hours=time[0]
 end
 new_time.push new_hours
