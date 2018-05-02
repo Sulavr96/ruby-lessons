@@ -1,39 +1,57 @@
 class Test
+  diamond_array = [1, 1, 2, 2, 2, 4]
+  sorted_diamond_array = diamond_array.sort
+  people = []
+  total_person = 3
+  sum = sorted_diamond_array.sum
 
-  diamondArray=[1,2,2,3,5,4,4]
-  sorted_DiamondArray=diamondArray.sort
-  sum=0
-  person_Count=0
-  total_person=3
-  sorted_DiamondArray.each do |number|
-    sum=sum+number
-  end
-
-  if sum%total_person!=0
-  puts "The Array Cannot be divided"
+  if sum % total_person != 0
+    puts "The Array Cannot be divided"
   else
-    sorted_DiamondArray.each do|number|
-      sorted_DiamondArray.each do|num|
-        a=number
-        b=num
-        if a+b==2*sorted_DiamondArray.last
-          puts "person #{total_person}: #{sorted_DiamondArray.last}"
-          end
-        if a+b==sorted_DiamondArray.last && a<b
-          distributed_arr=Array.new
-          distributed_arr.push(a,b)
 
-          person_Count+=1
-          puts "person #{person_Count}:"+ distributed_arr.to_s
+    hand_capacity = 1
+    max_individual_diamond = sum / total_person
+    max_individual_diamond
+    diamonds_in_hand = []
+    while (hand_capacity < sorted_diamond_array.length) do
+
+      sorted_diamond_array.each do |number|
+        diamonds_in_hand.push(number)
+        sorted_diamond_array[diamonds_in_hand.length...sorted_diamond_array.length].each_with_index do |picked_diamond, index|
+          if (diamonds_in_hand.sum == max_individual_diamond)
+            people.push(diamonds_in_hand)
+            #   remove diamonds in hand from sorted array
+
+          else
+            diamonds_in_hand.push(picked_diamond)
+            if (diamonds_in_hand.sum < max_individual_diamond)
+              diamonds_in_hand.pop(picked_diamond)
+            else
+              #   cannot divide case
+            end
           end
+
+          if (index == sorted_diamond_array.length - 1)
+            hand_capacity += 1
+          end
+
         end
 
-
-        end
-
+      end
     end
 
-
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
 
 

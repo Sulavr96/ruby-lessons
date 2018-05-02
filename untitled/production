@@ -1,0 +1,26 @@
+F, [2018-04-26T07:27:42.748701 #24842] FATAL -- : [c0a63296-acf9-48d4-bc4d-d586720282c2] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2018-04-26T07:27:42.748764 #24842] FATAL -- : [c0a63296-acf9-48d4-bc4d-d586720282c2] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2018-04-26T07:27:42.748828 #24842] FATAL -- : [c0a63296-acf9-48d4-bc4d-d586720282c2] rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+--
+I, [2018-04-26T07:28:08.332022 #29592]  INFO -- : [f92cf8db-4948-4dae-ad7e-84d0030b5013] Started GET "/ api/theme_purchases/?test_type=test&page_no=1&per_page_count=20€t_page=1&_=0.9888637424877293" for 103.94.220.78 at 2018-04-26 07:28:08 -1000
+I, [2018-04-26T07:28:08.334241 #29592]  INFO -- : [f92cf8db-4948-4dae-ad7e-84d0030b5013] Processing by Api::V1::ProductsController#index as JSON
+I, [2018-04-26T07:28:08.334388 #29592]  INFO -- : [f92cf8db-4948-4dae-ad7e-84d0030b5013]   Parameters: {"udid": "CDF450F6-BD19-4607-BF3B-178031E59AF1", "theme_details_id": 2, "points": 200}
+I, [2018-04-26T07:28:08.354570 #1178]  INFO -- : [77fa3e82-f5a7-4797-b5c0-9f6efaa4f41f] Completed 200 OK in 29ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+I, [2018-04-26T07:28:08.357658 #29417]  INFO -- : [ca0bbedf-66b7-430f-bc08-80ed3d0c5277] Completed 200 OK in 37ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+I, [2018-04-26T07:28:08.408417 #15370]  INFO -- : [e10b1818-ee25-4b6f-adb4-8a7799a81dde] Completed 200 OK in 83ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+I, [2018-04-26T07:28:08.552908 #3762]  INFO -- : [7f61eea0-82ff-4ae4-9ca8-a4b4f971067f] Completed 200 OK in 304ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+I, [2018-04-26T07:28:10.615460 #29592]  INFO -- : [f92cf8db-4948-4dae-ad7e-84d0030b5013] Completed 200 OK in 2281ms (Views: 297.6ms | ActiveRecord: 0.0ms)
+
+F, [2018-04-26T07:27:42.748701 #24842] FATAL -- : [c0a63296-acf9-48d4-bc4d-d586720282c2] actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+F, [2018-04-26T07:27:42.748764 #24842] FATAL -- : [c0a63296-acf9-48d4-bc4d-d586720282c2] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+F, [2018-04-26T07:27:42.748828 #24842] FATAL -- : [c0a63296-acf9-48d4-bc4d-d586720282c2] rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+--
+I, [2018-04-26T07:28:08.332022 #29592]  INFO -- : [f92cf8db-4948-4dae-ad7e-84d0030b5013] Started GET "/ api/theme_purchases/?test_type=control&page_no=1&per_page_count=20€t_page=1&_=0.9888637424877293" for 103.94.220.78 at 2018-04-26 07:28:08 -1000
+I, [2018-04-26T07:28:08.334241 #29592]  INFO -- : [f92cf8db-4948-4dae-ad7e-84d0030b5013] Processing by Api::V1::ProductsController#index as JSON
+I, [2018-04-26T07:28:08.334388 #29592]  INFO -- : [f92cf8db-4948-4dae-ad7e-84d0030b5013]   Parameters: {"udid": "CDF450F6-BD19-4607-BF3B-178031E59AF1", "theme_details_id": 2, "points": 200}
+I, [2018-04-26T07:28:08.354570 #1178]  INFO -- : [77fa3e82-f5a7-4797-b5c0-9f6efaa4f41f] Completed 200 OK in 29ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+I, [2018-04-26T07:28:08.357658 #29417]  INFO -- : [ca0bbedf-66b7-430f-bc08-80ed3d0c5277] Completed 200 OK in 37ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+I, [2018-04-26T07:28:08.408417 #15370]  INFO -- : [e10b1818-ee25-4b6f-adb4-8a7799a81dde] Completed 200 OK in 83ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+I, [2018-04-26T07:28:08.552908 #3762]  INFO -- : [7f61eea0-82ff-4ae4-9ca8-a4b4f971067f] Completed 200 OK in 304ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+I, [2018-04-26T07:28:10.615460 #29592]  INFO -- : [f92cf8db-4948-4dae-ad7e-84d0030b5013] Completed 200 OK in 2281ms (Views: 297.6ms | ActiveRecord: 0.0ms)
+

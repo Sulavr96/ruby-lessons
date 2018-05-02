@@ -1,49 +1,35 @@
 module Name
-  def complete_name()
-    animal=Animal.new()
-    human=Human.new()
- puts animal.getName
-
-
+  def complete_name
+    if self.class.name.eql? "Animal"
+      puts "#{name}(#{scientific_name})"
+    else
+      puts "#{first_name} #{last_name}(#{scientific_name})"
+    end
   end
 end
-
-
 class Animal
   include Name
-  @@name
-  @@scientific_name
-  def setName(name,scientificname)
-    @name=name
-    @scientific_name=scientificname
+  attr_accessor :name, :scientific_name
+
+  def initialize name, scientific_name
+    @name = name
+    @scientific_name = scientific_name
   end
-def getName
-  arr1=Array.new
-  arr1.push(@name,@scientific_name)
-  return arr1.to_a
-end
-
-
 end
 
 class Human
   include Name
-  @@first_name
-  @@last_name
-  @@scientific_name
-  def setName(fname,lname,sname)
-    @first_name=fname
-    @last_name=lname
-    @scientific_name=sname
-  end
-  def getName
-    arr2=Array.new
-    arr2.push(@first_name)
-    arr2.push(@last_name)
-    arr2.push(@scientific_name)
-    return arr2.to_a
+  attr_accessor :first_name, :last_name, :scientific_name
+
+  def initialize first_name, last_name, scientific_name
+    @first_name = first_name
+    @last_name = last_name
+    @scientific_name = scientific_name
   end
 end
-human=Human.new
-human.setName("ram","bahadur","Homosapiens")
+animal = Animal.new("Frog", "RanaTigrina")
+human = Human.new("Ram", "Bahadur", "Homosapiens")
+animal.complete_name
 human.complete_name
+
+

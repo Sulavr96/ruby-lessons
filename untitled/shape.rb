@@ -1,23 +1,33 @@
 include Math
 class Shape
-  def area1(a)
-    b=PI*a*a
-    c=b.to_f
+  def area
+    @length*@breadth
   end
-  def area (b,c)
-    b*c
+end
+class Circle < Shape
+def initialize radius
+  @length=radius
+  @breadth=PI*radius
+end
+end
+class Rectangle < Shape
+  def initialize length, breadth
+    @length = length
+    @breadth = breadth
   end
-  class Circle <Shape
-
+end
+class Square < Shape
+  def initialize side_length
+    @length = side_length
+    @breadth = side_length
   end
-  class Rectangle<Shape
-
-
-  end
-  rect=Rectangle.new
-  cir=Circle.new
-  puts rect.area(3,6)
-  puts cir.area1(3)
-
 
 end
+cir = Circle.new 5
+#
+rect = Rectangle.new 11, 12
+square = Square.new 10
+puts cir.area
+puts rect.area #=> 132
+puts square.area #=>100
+
